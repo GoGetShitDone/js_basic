@@ -1,144 +1,80 @@
-const woo = document.getElementsByClassName("WOOWOOO");
+const h1 = document.querySelector("h1");
 
-const hello = document.getElementsByTagName("h1");
-
-const title = document.getElementById("title");
-
-const search = document.querySelector(".hello h1");
-
-const searchAll = document.querySelectorAll(".hello h1");
-
-const searchDetail = document.querySelector(".hello:first-child h1");
+function handleTitleEasyClick() {
+    h1.classList.toggle("active");
+}
+h1.addEventListener("click", handleTitleEasyClick);
 
 
-title.innerText = "YES!! GO! GET SHIT DONE!";
 
-console.log(title.id);
-console.log(title.className);
-
-console.dir(woo);
-console.dir(hello);
-console.dir(title);
-console.dir(search);
-console.log(search);
-console.log(searchAll);
-console.log(searchDetail);
-console.log(title);
-console.dir(searchDetail);
-console.dir(title);
-
-title.style.color = "blue";
-
-///////////////////////////////
-//////////[- EVENT -]//////////
-///////////////////////////////
+////////////////////////////////////////////
+////////////////////////////////////////////
+////////////////////////////////////////////
 
 
-// // - Enter -
+// const h1 = document.querySelector("h1");
+
+// function handleTitleEasyClick() {
+//     const clickedClass = "active"
+//     if (h1.classList.contains(clickedClass)) {
+//         h1.classList.remove(clickedClass);
+//     } else {
+//         h1.classList.add(clickedClass);
+//     }
+// }
+// h1.addEventListener("click", handleTitleEasyClick);
+
+
+
+////////////////////////////////////////////
+////////////////////////////////////////////
+////////////////////////////////////////////
+
 
 // function handleTitleClick() {
-//     console.log("title was Clicked");
-//     title.style.color = "pink";
+//     const activeClass = "active"
+//     const activeClick = h1.className
+//     let deactiveClick
+
+//     if (activeClick === activeClass) {
+//         deactiveClick = "";
+//     } else {
+//         deactiveClick = activeClass;
+//     }
+
+//     h1.className = deactiveClick;
 // }
 
-
-// - Mouse Enter -
-
-function handleMouseEnter() {
-    console.log("Mouse is here");
-    title.style.color = "red";
-}
+// h1.addEventListener("click", handleTitleClick);
 
 
-// - Mouse Leave -
+// 변수명 개선:
+// activeClick과 deactiveClick은 실제로 클래스 이름을 나타내므로, 
+// currentClassName과 newClassName으로 변경
 
-function handleMouseLeave() {
-    console.log("Mouse leaved");
-    title.style.color = "blue";
-}
+// 불필요한 변수 제거:
+// title과 h1이 같은 요소를 가리키고 있음 
+// h1 하나의 변수만 사용
 
+// 클래스 토글 사용:
+// click 대신 classList.toggle() 메서드를 사용
 
-// - Resize -
-
-function handleWindowResize() {
-    document.body.style.backgroundColor = "black";
-}
-
-// - copied -
-
-function handleWindowCopy() {
-    document.body.style.backgroundColor = "Red";
-    console.log("copied");
-}
+// 상수 사용:
+// 문자열 "active"를 상수로 정의해서 오타 방지와 유지보수성이 향상
 
 
-function handleWindowOffline() {
-    alert("SOS NO WIFI");
-}
-
-function handleWindowOnline() {
-    alert("YES! HERE IS WIFI!");
-}
+////////////////////////////////////////////
+////////////////////////////////////////////
+////////////////////////////////////////////
 
 
-// title.addEventListener("click", handleTitleClick);
-// // title.onclick = handleTitleClick;
+// const h1 = document.querySelector("h1");
+// const ACTIVE_CLASS = "active";
 
-title.addEventListener("mouseleave", handleMouseLeave);
-// title.onmouseleave = handleMouseLeave;
+// h1.innerText = "YES!! GO! GET SHIT DONE!";
 
-title.addEventListener("mouseenter", handleMouseEnter);
-// title.onmouseenter = handleMouseEnter;
+// function handleTitleClick() {
+//     h1.classList.toggle(ACTIVE_CLASS);
+// }
 
-window.addEventListener("resize", handleWindowResize);
-// window.onresize = handleWindowResize;
-
-window.addEventListener("copy", handleWindowCopy);
-// window.oncopy = handleWindowCopy;
-
-window.addEventListener("offline", handleWindowOffline);
-window.addEventListener("online", handleWindowOnline);
-
-
-
-
-
-///////////////////////////////
-//////////[- EVENT -]//////////
-////////[- ADVENCED -]/////////
-///////////////////////////////
-
-
-
-// - Enter -> Other Actions
-
-function handleTitleClickAndOthers() {
-    if (title.style.color === "pink") {
-        title.style.color = "green";
-    } else {
-        title.style.color = "pink";
-    }
-}
-
-title.addEventListener("click", handleTitleClickAndOthers);
-
-
-
-// - Enter -> Other Actions -> with variable : const currentColor, newColor
-
-function handleTitleClickAndOthers() {
-
-    const currentColor = title.style.color;
-    let newColor;
-
-    if (currentColor === "pink") {
-        newColor = "green";
-    } else {
-        newColor = "pink";
-    }
-
-    title.style.color = newColor;
-
-}
-
-title.addEventListener("click", handleTitleClickAndOthers);
+// h1.addEventListener("click", handleTitleClick);
