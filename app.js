@@ -34,12 +34,12 @@ title.style.color = "blue";
 ///////////////////////////////
 
 
-// - Enter -
+// // - Enter -
 
-function handleTitleClick() {
-    console.log("title was Clicked");
-    title.style.color = "pink";
-}
+// function handleTitleClick() {
+//     console.log("title was Clicked");
+//     title.style.color = "pink";
+// }
 
 
 // - Mouse Enter -
@@ -80,8 +80,9 @@ function handleWindowOnline() {
     alert("YES! HERE IS WIFI!");
 }
 
-title.addEventListener("click", handleTitleClick);
-// title.onclick = handleTitleClick;
+
+// title.addEventListener("click", handleTitleClick);
+// // title.onclick = handleTitleClick;
 
 title.addEventListener("mouseleave", handleMouseLeave);
 // title.onmouseleave = handleMouseLeave;
@@ -97,3 +98,47 @@ window.addEventListener("copy", handleWindowCopy);
 
 window.addEventListener("offline", handleWindowOffline);
 window.addEventListener("online", handleWindowOnline);
+
+
+
+
+
+///////////////////////////////
+//////////[- EVENT -]//////////
+////////[- ADVENCED -]/////////
+///////////////////////////////
+
+
+
+// - Enter -> Other Actions
+
+function handleTitleClickAndOthers() {
+    if (title.style.color === "pink") {
+        title.style.color = "green";
+    } else {
+        title.style.color = "pink";
+    }
+}
+
+title.addEventListener("click", handleTitleClickAndOthers);
+
+
+
+// - Enter -> Other Actions -> with variable : const currentColor, newColor
+
+function handleTitleClickAndOthers() {
+
+    const currentColor = title.style.color;
+    let newColor;
+
+    if (currentColor === "pink") {
+        newColor = "green";
+    } else {
+        newColor = "pink";
+    }
+
+    title.style.color = newColor;
+
+}
+
+title.addEventListener("click", handleTitleClickAndOthers);
